@@ -1,0 +1,13 @@
+<app-header *ngIf="isLoggedIn"></app-header>
+<div class="container">
+  <div class="left-sidebar" style="float: left;">
+    <app-left-sidebar *ngIf="isLoggedIn"></app-left-sidebar>
+  </div>
+  <div class="main-page">
+    <router-outlet *ngIf="isLoggedIn"></router-outlet>
+  </div>
+  <div class="right-sidebar" style="float: left;">
+    <app-right-sidebar *ngIf="isLoggedIn"></app-right-sidebar>
+  </div>
+</div>
+<app-footer *ngIf="isLoggedIn"></app-footer>

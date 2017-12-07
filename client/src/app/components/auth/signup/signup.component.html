@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <flash-messages></flash-messages>
+  <div class="box row" style="top: 200px;">
+    <div class="box-image">
+      <img src="/assets/img/Avatar/Avatar_Level_5.png" alt="">
+    </div>
+    <div class="form">
+      <div class="title">
+        <span>Become a <b>Craftsman!</b></span>
+        <hr>
+      </div>
+      <form class="form-horizontal" action="" method="post">
+        <fieldset>
+          <div style="margin-top: 15px; margin-bottom: 20px;">
+            Create your free account. Already have an account? <a href="/login" class="orange">Sign in!</a>
+          </div>
+          <div [ngClass]="{'form-group': true, 'has-error1': emptyUsername, 'row':true}">
+            <div class="col-xs-6" style="padding-right: 6px">
+              <input type="text" class="form-control" id="inputUsername" placeholder="First Name" [(ngModel)]="user.fullname" name="firstname"
+                #username="ngModel">
+            </div>
+            <div class="col-xs-6" style="padding-left: 6px">
+              <input type="text" class="form-control" id="lastname" placeholder="Last Name" [(ngModel)]="lastname1" name="lastname"
+                #lastname>
+            </div>
+          </div>
+          <div *ngIf="emptyUsername" class="animated fadeIn"><label class="error">Please enter username.</label></div>
+          <div [ngClass]="{'input-group': true, 'has-error1': !onEmail}">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+            <input type="text" class="form-control" id="inputEmail" placeholder="yours@example.com" [(ngModel)]="user.email" name="email"
+              #email="ngModel">
+          </div>
+          <div *ngIf="!onEmail" class="animated fadeIn"><label class="error">Please enter a valid email address.</label></div>
+          <div [ngClass]="{'input-group': true, 'has-error1': !matchPassword || !validPassword}">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key"></i></span>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" [(ngModel)]="user.password" name="password"
+              #password="ngModel">
+          </div>
+          <div *ngIf="!matchPassword" class="animated fadeIn"><label class="error">Password does not match.</label></div>
+          <div *ngIf="!validPassword" class="animated fadeIn"><label class="error">Password must contain one number, one special character and one upper case letter.</label></div>
+          <div [ngClass]="{'input-group': true, 'has-error1': !matchPassword || !validPassword}">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key"></i></span>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" name="confirm_password" #confirmpassword>
+          </div>
+          <div class="input-group row">
+            <div class="col-lg-12 text-center" style="margin-bottom: 15px;">
+              <a class="btn btn-orange big" (click)="signup(username.value, lastname.value, email.value, password.value, confirmpassword.value)" style="width: 100%;">Sign Up</a>
+            </div>
+
+            <div class="col-xs-12" style="margin-bottom: 15px; line-height: 13px;">
+              or Sign Up...
+            </div>
+            <div class="col-xs-6" style="padding-right: 6px;">
+              <a href="javascript:void(0)" (click)="loginWithFacebook()">
+                <img src="/assets/img/withfacebook.jpg" alt="">
+              </a>
+            </div>
+            <div class="col-xs-6" style="padding-left: 6px;">
+              <a href="javascript:void(0)" (click)="loginWithGoogle()">
+                <img src="/assets/img/withgoogle.jpg" alt="">
+              </a>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

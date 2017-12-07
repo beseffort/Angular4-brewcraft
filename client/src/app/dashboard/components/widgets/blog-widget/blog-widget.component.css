@@ -1,0 +1,17 @@
+.widget-content  {
+    background: #252525;
+    width: 100%;
+    text-align: center;
+}
+
+.widget-content img {
+    width: 100%;
+}
+
+.widget-title {
+    height: 40px;
+    background: #ffc107;
+    color: white;
+    font-size: 17px;
+    padding: 5px 14px;
+}

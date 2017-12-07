@@ -1,0 +1,28 @@
+.widget {
+    height: 43px;
+    background: #ff5722;
+    color: white;
+    font-size: 18px;
+    padding: 5px 14px;
+    padding-top: 6px;
+    cursor: pointer;
+}
+.Share-recipe{
+	cursor:pointer;
+}
+
+
+/*remove after admin portal*/
+.modal {
+    text-align: left;
+    overflow:initial;
+    bottom:initial;
+}
+.modal-close{
+	top: 33px;
+    right: 20px;
+}
+
+.modal,.modal .title {
+    margin-bottom: 20px !important;
+}

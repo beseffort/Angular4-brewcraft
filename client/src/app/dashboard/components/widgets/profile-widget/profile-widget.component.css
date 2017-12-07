@@ -1,0 +1,65 @@
+.widget {
+    background: white;
+    width: 100%;
+    border: solid 1px #ddd;
+    padding: 15px;
+    padding-top: 9px;
+}
+
+hr {
+    margin: 10px -15px 20px;
+}
+
+.widget-title {
+    color: #ffc107;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.widget h6 {
+    font-weight: bold;
+}
+
+.profile-info {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 6px;
+}
+
+.profile-info li>div {
+    width: 12px;
+    float: left;
+    margin-right: 7px;
+}
+
+.modal {
+    text-align: left;
+}
+
+.modal .title {
+    margin-bottom: 20px;
+}
+
+.box {
+    overflow: initial;
+    max-width: 650px;
+}
+.profile-photo {
+    border-radius: 0% !important;
+    border: none !important;
+    max-width: 230px;
+    margin-top: 20px;
+    cursor:default;
+}
+
+.box-image {
+    float: left;
+    width: 200px;
+}
+
+.box .form {
+    width: calc(100% - 200px);
+    float: left;
+    padding-left: 20px;
+}

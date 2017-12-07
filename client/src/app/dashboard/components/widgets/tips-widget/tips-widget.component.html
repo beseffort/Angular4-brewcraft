@@ -1,0 +1,48 @@
+<div class="widget" style="cursor: pointer">
+  <div class="widget-content">
+    <img src="assets/img/Tips.jpg" alt="" *ngIf="!tips">
+    <div id="tipCarousel" class="carousel slide" data-ride="carousel" *ngIf="tips">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#tipCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#tipCarousel" data-slide-to="1"></li>
+        <li data-target="#tipCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active" (click)="showTip(tips[0])">
+          <img src="{{tips[0].featured_media}}" alt="Chania">
+          <div class="carousel-item-title">
+            {{tips[0].title}}
+          </div>
+        </div>
+        <div class="item" (click)="showTip(tips[1])">
+          <img src="{{tips[1].featured_media}}" alt="Chania">
+          <div class="carousel-item-title">
+            {{tips[1].title}}
+          </div>
+        </div>
+        <div class="item" (click)="showTip(tips[2])">
+          <img src="{{tips[2].featured_media}}" alt="Chania">
+          <div class="carousel-item-title">
+            {{tips[2].title}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#tipCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#tipCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <div class="widget-title">
+    <span class="pull-left">Tips</span>
+  </div>
+</div>

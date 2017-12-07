@@ -1,0 +1,37 @@
+<div class="context" *ngIf="posts.length > 0">
+  <div class="media post" *ngFor="let post of posts">
+    <div class="media-left">
+      <a>
+        <img class="media-object" [src]="post.avatar" onError="this.onerror=null;this.src='/assets/gravatar/default.jpg';"
+        />
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{post.senderName}} <small>&bull; {{getTimeDiff(post.time)}}</small></h4>
+      <span class="desc" data-name="chat" id="{{user.guildID}}" HashTagLink>
+        {{post.message.length < 100? post.message: post.message.substr(0, 100) + '...'}}
+      </span>
+      <div class="footer">
+        <span>
+          <img src="assets/img/unlike.png" class="cursor" alt="" (click)="likeMsg(post.uid , user.guildID)" *ngIf="!post.isLike" />
+          <img src="assets/img/like.png" class="cursor" alt="" (click)="UnlikeMsg(post.uid ,  user.guildID)" *ngIf="post.isLike" />
+          {{ (this.post.likedUsers != undefined)?this.post.likedUsers.length:0 }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <button class="btn btn-orange big pull-right" style="margin-left: 5px;" (click)="loadMorepost()" *ngIf="posts.length >= this.maxPosts && !notFound">Load more</button>
+  <div class="clearfix"></div>
+</div>
+
+<div *ngIf="posts.length == 0">
+  <div class="text-center fs16 bold">No Message Found.</div>
+</div>  
+
+<div style="margin-top: 20px" *ngIf="!isNews">
+  <div class="row modifi-row">
+    <textarea rows="4" name="post" class="post-content form-control" style="width: 100%" placeholder="Write your post here..." [(ngModel)]="postContent" #chatMsg></textarea>
+  </div>
+  <button class="btn btn-orange big" style="margin-top: 5px"  type="button" (click)="sendChat(chatMsg.value)">Post</button>
+</div>

@@ -1,0 +1,115 @@
+.hop-img-left {
+    display: inline-block;
+    position: relative;
+    z-index: 1000;
+}
+
+.hop-img-left img {    
+    height: 68px;
+    margin-top: -63px !important;
+    margin-left: -70px;
+}
+
+.hop-img-right {
+    display: inline-block;
+    float: right;
+}
+
+.hop-img-right img {
+    height: 75px;
+    margin-top: -69px;
+}
+
+.brew-timer {
+    height: 500px;
+    background: url('/assets/img/brewday/orange_back.jpg') 0 0 / cover no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+.brew-timer .container,
+.brew-timer .container .beer-girl,
+.brew-timer .container .beer-girl img {
+    height: 100%;
+}
+
+.beer-girl img {
+    padding-top: 10px;
+    margin-top: 6px;
+    margin-left: -60px;
+    z-index: 1000;
+    position: relative;
+}
+
+.beer-girl {
+    float: left;
+}
+
+.steps {
+    float: left;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 70px;
+}
+
+h1.counter {
+    color: white;
+    font-weight: bold;
+    font-size: 89px;
+}
+
+.control-group a.btn {
+    margin-right: 15px;
+}
+
+h3.recipe_steps {
+    font-weight: 500;
+    color: white;
+    font-size: 38px;
+    margin-bottom: 10px;
+    margin-top: 27px;
+}
+
+.step-list .step {
+    margin-bottom: 10px;
+}
+
+.step-list .step .status-img{
+    display: inline-block;
+    width: 31px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.step-list .step .status-img img{
+    margin-top: -5px;
+}
+
+.step-list .step span{
+    color: white;
+    font-size: 18px;
+}
+
+.status-img img.completed {
+    width: 32px;
+}
+
+.status-img img.pending {
+    width: 22px;
+}
+
+.status-img img.waiting {
+    width: 22px;
+}
+
+.status-img img.paused {
+    width: 22px;
+}
+
+.step-list .step span.pending {
+    color: #ff5722;
+}
+
+.step-list .step {
+    transition: all 1.5s;
+}

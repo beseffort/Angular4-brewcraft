@@ -1,0 +1,24 @@
+<div class="widget" *ngIf="isGuildPage; else isNotGuildPage">
+  <a [routerLink]="['/dashboard/home']" style="text-decoration:none">
+    <div>
+      <div class="guild-logo">
+        <img [src]="userImg" alt="" width="100%">
+      </div>
+      <div class="guild-info">
+        Return to dashboard
+      </div>
+    </div>  
+  </a>
+</div>
+
+<ng-template #isNotGuildPage>
+  <div class="widget" *ngIf="isGuild">
+    <div class="guild-logo">
+      <img [src]="guild.logo" alt="" width="100%">
+    </div>
+    <div class="guild-info">
+      <span class="guild-name" class="pull-left">{{ guild.name }}</span>
+      <span class="guild-date" class="pull-right">est. {{ guild.createdDate | date:'y' }}</span>
+    </div>
+  </div>
+</ng-template>

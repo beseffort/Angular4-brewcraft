@@ -1,0 +1,105 @@
+<div class="modal fade" id="media-upload">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Upload a Media</h4>
+      </div>
+      <div class="modal-body">
+        <div class="fileUpload btn btn-orange">
+          <span>Upload a Photo</span>
+          <input type="file" imageUpload (imageSelected)="selected($event)" class="upload" [resizeOptions]="resizeOptions" [allowedExtensions]="['jpg', 'jpeg', 'png']">
+        </div>
+        <input type="text" class="form-control" placeholder="Enter youtube video link..." #video>
+        <button type="button" class="btn btn-orange" (click)="onLinkVideo(video.value)">Link to Youtube Video</button>
+        <!--<img [src]="mediaUrl" [hidden]="!mediaUrl"><br>-->
+        <p *ngIf="imageError">{{imageError}}</p>
+      </div>
+      <div class="modal-footer">
+        <div *ngIf="errorMsg!=''" class="animated fadeIn"><label class="error">{{errorMsg}}</label></div>
+        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="widget white">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#general" data-toggle="tab"  aria-expanded="true">General</a></li>
+    <li class=""><a href="#guild_news" data-toggle="tab"  aria-expanded="false">Guild News</a></li>
+    <li class=""><a href="#browse_recipes" data-toggle="tab"  aria-expanded="false">Browse Recipes</a></li>
+    <!-- <li class=""><a href="#add_recipes" data-toggle="tab"  aria-expanded="false">Add Recipes</a></li> -->
+  </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="clearfix"></div>
+    <div class="tab-pane fade active in" id="general">
+      <div class="row">
+        <div class="left">
+          <strong>Create a Post</strong>
+          <img [src]="mediaUrl" [hidden]="!mediaUrl" style="width: 100px"><br>
+          <iframe width="100" height="80" [src]="videoUrl" [hidden]="!videoUrl"></iframe>
+        </div>
+        <div class="right mention_section">
+          <textarea class="post-content form-control mention" placeholder="Write your post here..." [(ngModel)]="postContent" (keyup)="mention($event)"></textarea>
+          
+          <div class="message_text_box"><div class="pop-over-header"><span class="pop-over-header-title">Mention…</span><a href="javascript:;" class="pop-over-header-close-btn icon-sm icon-close">
+            <i class="fa fa-close"></i></a></div>
+            <div class="pop-listing">
+              <ul class="listing_items">
+                <li *ngFor="let name of suggestionNames" class="cursor">
+                  <a href="javascript:;">{{name.username}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- <button class="btn btn-orange" (click)="mediaUpload()">+ Photo/Video</button> -->
+          <button class="btn btn-orange" (click)="post()">Post</button>
+        </div>
+      </div>
+        
+      <!-- Blog Widget -->
+      <div class="blog-widget white marginT30">
+      <app-post></app-post>
+      </div>
+      
+      <!-- End Blog Widget -->
+    </div>
+    <div class="tab-pane fade" id="guild_news">
+      <div class="blog-widget white" style="margin-top: 20px">
+          <app-chat [mode]="'GUILD'" [isNews]=true ></app-chat>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="browse_recipes">
+      <div class="media post" *ngFor="let recipe of recipes">
+        <div class="media-left">
+          <a href="javascript:void(0)">
+            <img class="media-object browse-recipe-img" onerror='src="/assets/img/recipe/Ale.png"' [src]="recipe.photo" alt="...">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{recipe.name}} <small><span *ngIf="recipe.brewer">&bull; by {{recipe.brewer}} </span><span *ngIf="recipe.created_date"> &bull; added {{getTimeDiff(recipe.created_date)}} </span></small></h4>
+          <span class="desc" *ngIf="recipe.note">{{recipe.note.length < 100? recipe.note: recipe.note.substr(0, 100) + '...'}} </span>
+          <div class="footer">
+            <span>
+              <img src="assets/img/favorite_breweries.png" alt="">
+              356
+            </span>
+            <button type="button" (click)="showRecipe(recipe.uid)" class="btn btn-orange">Show recipe</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-box">
+        <input type="text" class="form-control" placeholder="Browse recipe by name and author" #recipeKeyword/>
+        <button class="btn btn-orange big pull-right" style="margin-left: 5px;" (click)="browseRecipes(recipeKeyword.value)">Browse</button>
+      </div>
+      <div class="row" *ngIf="!isRecipe">
+        <div class="col-md-12 fs16 text-center bold" >
+          No recipe found.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.search-box:hover{
+  background: #ffc107 !important;
+}
+.noty-num {
+  position: absolute;
+  background: #ff5722;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0px 4px;
+  top: 1px;
+  right: 6px;
+  font-size: 9px;
+  z-index: 9;
+}

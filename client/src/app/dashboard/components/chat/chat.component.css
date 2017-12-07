@@ -1,0 +1,21 @@
+#chat-box img.profile {
+    border-radius: 50%;
+    width: 42px;
+    border: solid 1px #ccc;
+}
+
+#chat-box .media-heading {
+    font-size: 1.2em;
+}
+
+#chat-box {
+    height: 400px;
+    overflow-y: scroll;
+    border: solid 1px #ccc;
+    padding: 15px;
+    position: relative;
+}
+
+textarea {
+    background: white;
+}

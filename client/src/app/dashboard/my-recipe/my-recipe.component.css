@@ -1,0 +1,23 @@
+hr {
+    margin-bottom: 0px;
+}
+
+.media.post {
+    margin-bottom: 0px;
+}
+
+.title.dark {
+    margin-bottom: 16px;
+}
+
+.footer-img {
+    box-shadow: none;
+    margin-top: 180px;
+}
+
+
+.title {
+    font-weight: 600;
+    font-size: 37px;
+    line-height: 1.15em;
+}

@@ -1,0 +1,9 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <button class="btn btn-orange big" (click)="getTips()">Get Tips</button>
+
+  <div class="tip post" *ngFor="let tip of tips">
+    <h1>{{tip.title.rendered}} <small>{{tip.date | date: yy-MM-dd}}</small></h1>
+    <div [innerHTML]="tip.content.rendered"></div>
+  </div>
+</div>

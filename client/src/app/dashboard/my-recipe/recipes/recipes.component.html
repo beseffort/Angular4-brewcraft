@@ -1,0 +1,42 @@
+<div class="container" *ngIf="recipes">
+  <div class="row recipe-grid">
+    <div class="col-md-4" *ngFor="let recipe of recipes;let i = index;">
+      <div class="recipe-card">
+        <div class="content">
+          <div class="title dark">
+            <span>{{recipe.name}}</span>
+            <hr>
+          </div>
+          <div class="recipe-img">
+            <img [src]="recipe.photo" alt="" class="img-responsive">
+          </div>
+          <div class="desc">
+            {{recipe.procedure.length < 100? recipe.procedure: recipe.procedure.substr(0, 100) + '...'}}
+          </div>
+          <div class="clearfix"></div>
+          <div class="row social-counter">
+            <div class="col-md-5">
+              <!-- <img src="/assets/img/Icons/share.png" alt="" class="recipe-card-icon"> &nbsp;Share recipe -->
+            </div>
+            <div class="col-md-3">
+              <img src="assets/img/unlike.png" width="28" class="cursor" alt="" (click)="likeRecipe(recipe.uid , i)" *ngIf="!recipe.isLike" />
+              <img src="assets/img/like.png" width="28" class="cursor" alt="" (click)="UnlikeRecipe(recipe.uid , i)" *ngIf="recipe.isLike" />
+              {{ recipe.recipeLikeCount }}
+            </div>
+            <div class="col-md-4">
+              <img src="/assets/img/Icons/review.png" alt="" class="recipe-card-icon" style="width: 19px"> &nbsp;{{recipe.reviews?recipe.reviews.length:0}} reviews
+            </div>
+          </div>
+        </div>
+        <div class="card-button" (click)="gotoRecipe(recipe)">
+          Show Recipe
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <button class="btn btn-orange big">Load more
+      <img src="/assets/img/Icons/load_more.png" alt="">
+    </button>
+  </div>
+</div>

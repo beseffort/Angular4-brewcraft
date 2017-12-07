@@ -1,0 +1,141 @@
+.card {
+    padding: 30px 45px;
+}
+
+.recipe-detail>.card {
+    box-shadow: 1px 1px 10px #888;
+    border: none;
+}
+
+.social-counter {
+    font-size: 18px;
+    color: #8e8e8e;
+}
+
+.social-counter img {
+    margin-top: -3px;
+}
+
+.recipe-detail {
+    color: #333333;
+    font-size: 16px;
+}
+
+.detail {
+    margin-top: 30px;
+}
+
+.detail .col {
+    width: calc(25% - 1px);
+    float: left;
+}
+
+.detail .col:not(:first-child) {
+    padding-top: 12px;
+}
+
+h4.red-title {
+    color: #ff5722;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.detail .vertical-bar {
+    height: 100%;
+    width: 1px;
+    background: #a6a6a6;
+    float: left;
+    margin-left: -30px;
+}
+
+.detail .vertical-bar.right {
+    margin: 0;
+}
+
+.procedure {
+    margin-top: 50px;
+    font-weight: 500;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.source {
+    margin-bottom: 30px;
+}
+
+.review-section {
+    background: #ffc107;
+    margin-left: -45px;
+    margin-right: -45px;
+    margin-bottom: -30px;
+    margin-top: 40px;
+    padding: 26px 40px;
+}
+
+.review-title {
+    line-height: 18px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.review-section h4 {
+    font-weight: bold;
+    color: white;
+    margin-top: -5px;
+    margin-bottom: 25px;
+}
+
+.review.card {
+    padding: 20px 16px 15px;
+    margin-bottom: 14px;
+}
+
+.review.card p {
+    font-size: 15px;
+    line-height: 20px;
+    color: #808080;
+    margin-bottom: 0px;
+}
+
+.review-section .top-image img {
+    margin: 0 auto;
+    margin-top: -141px;
+}
+
+.social-counter .item {
+    display: inline-block;
+}
+
+.additional_instro {
+    padding-left: 30px;
+    width: calc(25% + 30px) !important;
+}
+
+.beer_profile {
+    width: calc(25% - 30px) !important;
+}
+
+.write-review-box h4 {
+    margin-bottom: 20px;
+}
+
+.write-review-box button {
+    margin-top: 20px;
+}
+
+.write-review-box textarea {
+    background: white;
+    border: none;
+    height: 100px;
+    font-size: 16px;
+}
+.select_share_r{
+  padding: 2px 10px;
+}
+.star_position{
+  overflow: hidden;
+  vertical-align: top;
+  position: relative;
+  top: -7px;
+  left: 10px;
+}

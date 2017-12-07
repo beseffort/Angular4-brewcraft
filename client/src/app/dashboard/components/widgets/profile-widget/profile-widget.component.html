@@ -1,0 +1,89 @@
+<div class="modal fade" id="profile-box">
+  <div class="box row" style="top: 200px;">
+    <div class="box-image">
+      <div class="form-group" *ngIf="!uploadPhoto" style="text-align: center;">
+        <img [src]="'/assets/img/Avatar/Avatar_Level_' + (user.level==undefined?1:user.level) + '.png'" alt="" height="100" class="profile-photo">
+      </div>
+    </div>
+    <!--<button type="button" class="close" aria-hidden="true" (click)="closeProfileBox()">&times;</button>-->
+    <div class="form" *ngIf="!uploadPhoto">
+      <button class="btn btn-orange modal-close"  aria-hidden="true" (click)="closeProfileBox()">&times;</button>
+      <div class="title">
+        <span>Edit <b>Profile</b></span>
+        <hr>
+      </div>
+
+      <form class="form-horizontal" action="" method="post">
+        <fieldset>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user-o"></i></span>
+            <input type="text" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1" name="fullname" [(ngModel)]="tempUser.fullname">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1" style="padding: 6px 10px;"><i class="fa fa-birthday-cake"></i></span>
+            <material-datepicker [(date)]="tempUser.birthday" aria-placeholder="Birthday"></material-datepicker>
+          </div>
+          <div class="input-group row">
+            <div class="col-lg-12 text-center" style="margin-bottom: 15px;">
+              <button class="btn btn-orange big cropperBtn" (click)="saveProfile()"> Save </button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    
+   <!-- <div class="form-group photoCropper row" *ngIf="uploadPhoto">-->
+   <div class="form-group photoCropper row" *ngIf="false">
+      <div class="col-sm-8 text-center">
+        <img-cropper #cropper [image]="data2" [settings]="cropperSettings2"></img-cropper>
+        <div class="fileUpload btn btn-orange">
+          <span>Change picture</span>
+          <input id="custom-input" type="file" class="upload" (change)="fileChangeListener($event)">
+        </div>
+      </div>
+      <div class="col-sm-4 text-center">
+        <img [src]="data2.image" class="img-responsive cropperImage img-thumbnail img-circle" [width]="cropperSettings2.croppedWidth"
+          [height]="cropperSettings2.croppedHeight" style="margin-bottom: 20px">
+        <button class="btn btn-orange big cropperBtn text-center pull-left" (click)="imageSave()"> Save </button>
+        <button class="btn btn-light-red cropperBtn text-center pull-right" (click)="cancelUploadPhoto()"> Cancel </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="widget">
+  <!-- <span class="widget-title"><img src="assets/img/Icons/Intro_Icon.png" alt="" style="margin-right: 10px;">Intro</span> -->
+  <span class="widget-title">{{user.fullname}}</span>
+  <hr>
+
+  <!-- <h6>{{user.fullname}}</h6> -->
+  <ul class="profile-info">
+    <li>
+      <div>
+        <img src="assets/img/Icons/beer_icon.png" alt="">
+      </div>
+      Craftman - <span class="caps">joined</span> {{joinDate}}
+    </li>
+    <!-- <li>
+      <div>
+        <img src="assets/img/Icons/map_icon.png" alt="">
+      </div>
+      Washington, DC
+    </li> -->
+    <li *ngIf="tempUser.birthday">
+      <div>
+        <img src="assets/img/Icons/birthday_icon.png" alt="">
+      </div>
+      {{tempUser.birthday | date: 'y.MM.dd'}}
+    </li>
+    <!-- <li>
+      <div>
+        <i class="fa fa-rss" style="font-size: 12px; color: #999;"></i>
+      </div>
+      Followed by {{user.followed == undefined? 0: user.followed.length - 1}} people
+    </li> -->
+  </ul>
+
+  <a href="javascript:void(0)" class="orange" (click)="openProfileDialog()"><img src="assets/img/Icons/edit_icon.png" alt="">&nbsp;&nbsp;edit</a>
+</div>

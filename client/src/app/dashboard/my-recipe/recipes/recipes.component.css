@@ -1,0 +1,19 @@
+button.btn.btn-orange.big {
+    background: #ffc107;
+    height: 45px;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    padding: 3px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.card-button {
+    cursor: pointer;
+}
+
+.social-counter img {
+    width: 23px;
+}

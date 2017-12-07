@@ -1,0 +1,79 @@
+<!--
+	Status:-Temporary,
+	Note:- Make a Directive for it. To Avoid Duplication of code with ../../my-recipe/recipe/reciepe-component.html. When Admin Portarl Available
+	
+-->
+<div class="container recipe-detail modal fade" id="brew_of_day_modal">
+  <div class="card white">
+  	<button class="btn btn-orange modal-close"  aria-hidden="true" data-dismiss="modal">&times;</button>
+    <div class="title dark pull-left">
+      <!--<span>{{recipe.name}}</span>-->
+      <span>Share-recipe</span>
+      <hr>
+    </div>
+    <div class="social-counter pull-right">
+      <div class="item Share-recipe">
+        <img src="/assets/img/Icons/share.png" alt="" class="recipe-card-icon" width="33"> &nbsp; Share recipe
+      </div>
+      <div class="item">
+        <img src="/assets/img/Icons/Heart.png" alt="" class="recipe-card-icon" width="28" style="margin-left:30px"> &nbsp;
+        <!--{{recipe.favorites}}-->0
+      </div>
+      <div class="item">
+        <img src="/assets/img/Icons/review.png" alt="" class="recipe-card-icon" width="24" style="margin-left:40px"> &nbsp;
+        <!--{{recipe.reviews?recipe.reviews.length:0}}-->12 reviews
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <b>Beer Style: </b><!--{{recipe.style}}-->Australian Ale &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <b>Recipe Type: </b><!--{{recipe.type}}-->Extractor  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <b>Yield: </b><!--{{recipe.batch_size}}-->6.08 gal
+    <div class="detail row" id="detail">
+      <div class="col">
+        <img src="/assets/img/recipe/Ale.png" alt="" class="img-responsive">
+      </div>
+      <div class="col beer_profile">
+        <h4 class="red-title">Beer Profile</h4>
+        <div><b>Original Gravity: </b><!--{{recipe.gravity_alcohol_content_color.measured_original_gravity}}-->
+        1.047
+        </div>
+        <div><b>Final Gravity: </b><!--{{recipe.gravity_alcohol_content_color.measured_final_gravity}}-->
+        1.010	
+        </div>
+        <div><b>Alcohol by Vol: </b><!--{{recipe.gravity_alcohol_content_color.actual_alcohol_by_vol}}-->
+        4.8%	
+        </div>
+        <div><b>Recipe Type: </b><!--{{recipe.type}}-->Extractor</div>
+        <div><b>Yield: </b><!--{{recipe.batch_size}}-->6.08 gal</div>
+      </div>
+      <div class="vertical-bar"></div>
+      <div class="col">
+        <h4 class="red-title">Ingredients:</h4>
+        <!--<div *ngFor="let ingredient of recipe.ingredients">
+          {{ingredient.name}}
+        </div>-->
+        <div>Pale Malt (2 Row) UK (2.5 SRM)</div>
+        <div>Munich Malt - 20L (20.0 SRM)</div>
+        <div>Pride of Ringwood [10.00 %] - Boil </div>
+        <div>15.0 min</div>
+      </div>
+      <div class="vertical-bar right"></div>
+      <div class="col additional_instro">
+        <h4 class="red-title">Additional Instructions</h4>
+        <div><b>Primary Ferment: </b>5-7</div>
+        <div><b>Secondary Ferment: </b>5-7</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End of modal-->
+
+<div class="widget" data-toggle="modal" data-target="#brew_of_day_modal">
+  <span class="guild-name" class="pull-left">
+    <img src="assets/img/Icons/crown.png" alt="" style="width: 30px;    margin-top: -3px;">&nbsp;&nbsp;
+    Brew of the day
+  </span>
+</div>
+
+

@@ -1,0 +1,12 @@
+<div class="white">
+    <span class="guild_member_title">Guild Members</span>
+    <div class="row modifi-row" *ngIf="!noJoined">
+        <div class="col-md-3 member-block-div" *ngFor="let member of joinedMembers;" >
+            <div>
+                <div><img [src]="member.photoUrl" width="100%"></div>
+                <div class="text-center">{{member.fullname}}</div>
+                <div class="text-center"><button class="btn btn-orange" (click)="assignOwner(member.uid)">Assign</button></div>
+            </div>
+        </div>
+    </div>
+</div>

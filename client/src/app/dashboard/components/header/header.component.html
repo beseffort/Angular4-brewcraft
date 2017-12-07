@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<div class="header-img" [style.background]="background_header">
+</div>
+
+<div class="user-stats-bar">
+  <div class="container">
+    <div class="avatar">
+      <img [src]="profileUrl" alt="">
+    </div>
+    <div class="user-name">
+      <div>
+        <h5>{{user.fullname}}</h5>
+        <div class="desc">Craftsman- <span class="caps">joined</span> {{joinDate}}</div>
+      </div>
+      <div>
+        <h5><img src="/assets/img/Icons/contact_icon.png" alt=""></h5>
+        <span class="desc"><i class="fa fa-star"></i></span>
+        <span class="desc"><i class="fa fa-star"></i></span>
+        <span class="desc"><i class="fa fa-star"></i></span>
+        <span class="desc"><i class="fa fa-star"></i></span>
+      </div>
+    </div>
+    <ul class="stats-list">
+      <li class="active">
+        <span class="figure">{{user.brewdays == undefined? 0: user.brewdays}} <img src="assets/img/Icons/Brew_days_icon.png" alt="" style="width: 21px; margin-top: -6px;"></span><br>
+        Brew Days
+      </li>
+      <li>
+        <span class="figure">{{user.recipes == undefined? 0: user.recipes}}<img src="assets/img/Icons/recipes_icon.png" alt="" style="width: 34px; margin-top: -6px; margin-left: 4px;"></span><br>
+        Recipes
+      </li>
+      <li>
+        <span class="figure">{{user.opinions == undefined?0: (user.opinions < 1000? user.opinions: floor(user.opinions/1000) + '.' + floor((user.opinions - 1000 * floor(user.opinions / 1000))/100)) }} <small *ngIf="user.opinions > 999">K</small></span><br>
+        Opinions
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="clearfix"></div>

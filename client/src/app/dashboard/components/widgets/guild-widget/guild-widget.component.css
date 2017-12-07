@@ -1,0 +1,17 @@
+.guild-logo {
+    background: #252525;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.guild-info {
+    height: 40px;
+    background: #ffc107;
+    color: white;
+    font-size: 17px;
+    padding: 5px 14px;
+}
+.a{
+  text-decoration: none;
+}

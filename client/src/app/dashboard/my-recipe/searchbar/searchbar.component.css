@@ -1,0 +1,25 @@
+.search-bar {
+    background: #ff5722;
+    padding: 30px 0;
+}
+
+.paragraph .content {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.center-img {
+    width: 83%;
+    margin-top: -135px;
+    position: absolute;
+    right: 10px;
+}
+
+.right-img {
+    position: absolute;
+    bottom: -55px;
+    max-width: 280px;
+}
+.recipe_btn{
+  margin: 35px 0;
+}

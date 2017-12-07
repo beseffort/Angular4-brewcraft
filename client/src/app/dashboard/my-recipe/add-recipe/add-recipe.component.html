@@ -1,0 +1,277 @@
+<div class="card white">
+  <div class="col-md-offset-2">
+    <form (ngSubmit)="submitRecipeForm(f)" #f="ngForm" novalidate>
+        <div class="addrecipe-header-div">
+          <h2>Add Recipe</h2>
+          <!-- <span>Lorem ipsum dolor sim amet</span> -->
+        </div>
+        <img src="/assets/img/brewday/step1.png" class="addrecipe-header-img">
+        <div class="row mrgtop20">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="control-label">Name</label>
+              <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="recipe.name" required>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Beer Type</label><br/>
+              <!-- <input type="text" class="form-control" placeholder="Beer Type" name="beer_type" [(ngModel)]="recipe.beer_type" required> -->
+              <!-- <div class="ui dropdown">
+                <input type="hidden" name="beer_type" [(ngModel)]="recipe.beer_type">
+                <i class="dropdown icon"></i>
+                <div class="default text">Beer Type</div>
+                <div class="menu">
+                  <div class="item" data-value="Ale">Ale</div>
+                  <div class="item" data-value="Lager">Lager</div>
+                  <div class="item" data-value="Stout">Stout</div>
+                  <div class="item" data-value="Porter">Porter</div>
+                  <div class="item" data-value="Malt">Malt</div>
+                </div>
+              </div> -->
+              <ng-select class="search" name="beer-type" [(ngModel)]="recipe.beer_type" [options]="beerTypes" [multiple]="false" placeholder="Beer Type" [allowClear]="true" [ngModelOptions]="{standalone: true}">
+              </ng-select>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Recipe Type</label><br/>
+              <!-- <input type="text" class="form-control" placeholder="Recipe Type" name="recipe_type" [(ngModel)]="recipe.recipe_type" required> -->
+              <!-- <div class="ui dropdown">
+                <input type="hidden" name="recipe_type" [(ngModel)]="recipe.recipe_type">
+                <i class="dropdown icon"></i>
+                <div class="default text">Recipe Type</div>
+                <div class="menu">
+                  <div class="item" data-value="All-Grain">All-Grain</div>
+                  <div class="item" data-value="Malt Extract">Malt Extract</div>
+                  <div class="item" data-value="Steeped Grain">Steeped Grain</div>
+                </div>
+              </div> -->
+              <ng-select class="search" name="recipe-type" [(ngModel)]="recipe.recipe_type" [options]="recipeTypes" [multiple]="false" placeholder="Recipe Type" [allowClear]="true" [ngModelOptions]="{standalone: true}">
+              </ng-select>
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-4 sliderImageDiv">
+            <div><span>Choose a suitable image</span></div>
+              <div class="quote-carousel carousel slide" data-interval="false" id="quote-carousel">
+                <!-- Bottom Carousel Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#quote-carousel" data-slide-to="1"></li>
+                  <li data-target="#quote-carousel" data-slide-to="2"></li>
+                </ol>      
+                <!-- Carousel Slides / Quotes -->
+                <div class="carousel-inner">      
+                  <!-- Quote 1 -->
+                  <div class="item active">
+                      <div class="row">
+                        <div class="slider_value col-sm-12 text-center">
+                          <img class="img-circle" src="assets/img/BeerTypes/Ale.png">
+                        </div>
+                        <div class="col-sm-12">
+                          <p>Ale</p>
+                        </div>
+                      </div>
+                  </div>
+                  <!-- Quote 2 -->
+                <div class="item">
+                    <div class="row">
+                      <div class="slider_value col-sm-12 text-center">
+                        <img class="img-circle" src="assets/img/BeerTypes/Lager.png">
+                      </div>
+                      <div class="col-sm-12">
+                        <p>Lager</p>
+                      </div>
+                    </div>
+                </div>
+                <!-- Quote 3 -->
+                <div class="item">
+                    <div class="row">
+                      <div class="slider_value col-sm-12 text-center">
+                        <img class="img-circle" src="assets/img/BeerTypes/Malt.png">
+                      </div>
+                      <div class="col-sm-12">
+                        <p>Malt</p>
+                      </div>
+                    </div>
+                </div>
+                <!-- Quote 4 -->
+                <div class="item">
+                    <div class="row">
+                      <div class="slider_value col-sm-12 text-center">
+                        <img class="img-circle" src="assets/img/BeerTypes/Porter.png">
+                      </div>
+                      <div class="col-sm-12">
+                        <p>Porter</p>
+                      </div>
+                    </div>
+                </div>
+                <!-- Quote 5 -->
+                <div class="item">
+                    <div class="row">
+                      <div class="slider_value col-sm-12 text-center">
+                        <img class="img-circle" src="assets/img/BeerTypes/Stout.png">
+                      </div>
+                      <div class="col-sm-12">
+                        <p>Stout</p>
+                      </div>
+                    </div>
+                </div>
+              </div>
+      
+                <!-- Carousel Buttons Next/Prev -->
+                <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+                <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+              </div>                          
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="control-label">Batch Size</label>
+              <input type="number" class="form-control" placeholder="Batch Size" name="batch_size" [(ngModel)]="recipe.batch_size" (blur)="onBlurBatchSize($event)" (focus)="onFocusBatchSize($event)" required>
+              
+            </div>
+            <div class="form-group">
+              <label class="control-label">Color</label><br/>
+              <!-- <input type="text" class="form-control" placeholder="Color" name="color" [(ngModel)]="recipe.color"> -->
+              <!-- <div class="ui dropdown">
+                <input type="hidden" name="color" [(ngModel)]="recipe.color">
+                <i class="dropdown icon"></i>
+                <div class="default text">Color</div>
+                <div class="menu">
+                  <div class="item" data-value="Pale Straw">Pale Straw</div>
+                  <div class="item" data-value="Straw">Straw</div>
+                  <div class="item" data-value="Pale Gold">Pale Gold</div>
+                  <div class="item" data-value="Deep Gold">Deep Gold</div>
+                  <div class="item" data-value="Pale Amber">Pale Amber</div>
+                  <div class="item" data-value="Medium Amber">Medium Amber</div>
+                  <div class="item" data-value="Deep Amber">Deep Amber</div>
+                  <div class="item" data-value="Amber-Brown">Amber-Brown</div>
+                  <div class="item" data-value="Brown">Brown</div>
+                  <div class="item" data-value="Ruby Brown">Ruby Brown</div>
+                  <div class="item" data-value="Deep Brown">Deep Brown</div>
+                  <div class="item" data-value="Black">Black</div>
+                </div>
+              </div> -->
+              <ng-select class="search" name="color" [(ngModel)]="recipe.color" [options]="colorDD" [multiple]="false" placeholder="Color" [allowClear]="true" [ngModelOptions]="{standalone: true}">
+              </ng-select>
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-4">
+            <div class="form-group">
+              <label class="control-label">Bitterness</label>
+              <input type="number" class="form-control" style="width:98%" placeholder="Bitterness" name="bitterness" [(ngModel)]="recipe.bitterness" (mouseenter)='hover()' (mouseleave)='leave()' (focus)="focus()" (focusout)="focusout()">                
+              <span class="strong tip-mark" *ngIf="bitterness_input_hover || bitterness_input_focus"> <h5>?</h5> </span>
+            </div>
+            <img class="ref_img" src="assets/img/bitterness_color_ref.gif" *ngIf="bitterness_input_hover || bitterness_input_focus">
+            <div class="form-group">
+              <label class="control-label">Fermentation</label>
+              <input type="text" class="form-control" placeholder="Fermentation" name="fermentation" [(ngModel)]="recipe.fermentation">
+            </div>
+        </div>
+      </div>
+      <hr style="width: 80%;margin-left: 0px;"/>
+      <div class="row mrgtop10">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="control-label">Original Gravity</label>
+            <input type="number" class="form-control" placeholder="Original Gravity" name="original_gravity" [(ngModel)]="recipe.original_gravity">
+            
+          </div>
+          <div class="form-group">
+            <label class="control-label">Final Gravity</label>
+            <input type="number" class="form-control" placeholder="Final Gravity" name="final_gravity" [(ngModel)]="recipe.final_gravity">
+          </div>
+        </div>
+        <div class="col-md-offset-1 col-md-4">
+          <div class="form-group">
+            <label class="control-label">Alcohol By Vol</label>
+            <input type="number" class="form-control" placeholder="Alcohol By Vol" name="alcohol_by_vol" [(ngModel)]="recipe.alcohol_by_vol" (blur)="onBlurAlcohol($event)" (focus)="onFocusAlcohol($event)">
+          </div>
+      </div>
+    </div>
+    <hr style="width: 80%;margin-left: 0px;"/>
+    <div class="row mrgtop10 no_padding">
+      <div class="col-md-9 no_padding">
+        <div class="form-group" *ngFor="let ingredient of recipe.ingredients; let i = index;">          
+          <div class="row">
+            <div class="col-lg-3">
+              <label class="control-label">Ingredients {{i+1}}</label>
+              <!-- <input type="text" class="form-control" placeholder="Hops" [name]="'ingredients_hops' + i" [(ngModel)]="ingredient.hops"> -->
+              <ng-select class="search" [ngModelOptions]="{standalone: true}" [(ngModel)]="ingredient.ingredient_type" [options]="ingredientTypes" [multiple]="false" placeholder="Ingredient Type" [allowClear]="true">
+              </ng-select>
+            </div>
+            <div class="col-lg-3" *ngIf="ingredient.ingredient_type!=''">
+              <label *ngIf="ingredient.ingredient_type=='Hops'" class="control-label">Hops Type</label>
+              <ng-select *ngIf="ingredient.ingredient_type=='Hops'" class="search" [ngModelOptions]="{standalone: true}" [(ngModel)]="ingredient.hops_type" [options]="hopsTypes" [multiple]="false" placeholder="Hops Type" [allowClear]="true">
+              </ng-select>
+              <label *ngIf="ingredient.ingredient_type=='Yeast'" class="control-label">Yeast Strain Type</label>
+              <ng-select *ngIf="ingredient.ingredient_type=='Yeast'" class="search" [ngModelOptions]="{standalone: true}" [(ngModel)]="ingredient.yeast_type" [options]="yeastTypes" [multiple]="false" placeholder="Yeast Strain Type" [allowClear]="true">
+              </ng-select>
+              <label *ngIf="ingredient.ingredient_type=='Grain'" class="control-label">Grain Type</label>
+              <ng-select *ngIf="ingredient.ingredient_type=='Grain'" class="search" [ngModelOptions]="{standalone: true}" [(ngModel)]="ingredient.grain_type" [options]="grainTypes" [multiple]="false" placeholder="Grain Type" [allowClear]="true">
+              </ng-select>
+            </div>
+            <div class="col-lg-3" *ngIf="ingredient.ingredient_type!='' && ingredient.ingredient_type!='Yeast'">
+              <label class="control-label">Unit</label>
+              <ng-select class="search" [ngModelOptions]="{standalone: true}" [(ngModel)]="ingredient.unit_type" [options]="unitTypes" [multiple]="false" placeholder="Empty" [allowClear]="true">
+              </ng-select>
+            </div>
+            <div class="col-lg-2" *ngIf="ingredient.ingredient_type!='' && ingredient.ingredient_type!='Yeast'">
+              <div class="form-group">
+                <label class="control-label">Amount</label>
+                <input type="number" class="form-control" placeholder="amount" [(ngModel)]="ingredient.amount" [ngModelOptions]="{standalone: true}"/>
+              </div>
+            </div>
+            <div *ngIf="recipe.ingredients.length > 1" style="position:relative;">
+              <a href=''><img class="remove-btn" src="assets/img/Icons/remove_icon.png"></a>
+            </div>
+          </div>
+        </div>
+        <label class="error animated fadeIn col-lg-10" *ngIf="ingredientError">{{ingredientError}}</label>
+        <div class="form-group">
+          <div class="col-lg-10 mrgtop10">
+            <button type="button" style="z-index:0" class="btn btn-orange big" (click)="addIngredient()">Add Ingredient</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr style="width: 80%;margin-left: 0px;"/>
+    <div class="row mrgtop10">
+      <div *ngFor="let step of recipe.steps; let i = index;">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="control-label">Name</label>
+            <input type="text" class="form-control" placeholder="Name" [name]="'step_name' + i" [(ngModel)]="step.name">
+          </div>
+        </div>
+        <div class="col-md-offset-1 col-md-4">
+          <div class="form-group">
+            <label class="control-label">Step Time</label>
+            <input type="text" class="form-control" placeholder="Step Time" [name]="'step_time' + i" [(ngModel)]="step.step_time">
+          </div>
+        </div>
+      </div>
+      <label class="error animated fadeIn col-lg-10" *ngIf="stepError">{{stepError}}</label>
+      <div class="form-group">
+        <div class="col-lg-10">
+          <button type="button" class="btn btn-orange big addStepBtn" (click)="addStep()">Add Step</button>
+        </div>
+      </div>
+    </div>
+      <div class="row mrgtop10">
+        <div class="col-md-9">
+          <label class="control-label">Procedure</label>
+          <div>
+            <textarea class="form-control" placeholder="Procedure" [name]="'procedure'" [(ngModel)]="recipe.procedure"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row mrgtop10">
+        <div class="col-md-9">
+          <img src="/assets/img/brewday/step2.png"/>
+          <div style="float: right">
+            <button type="submit" class="btn btn-orange submit_btn">Submit</button>
+          </div>
+        </div>
+      </div>
+  </form>
+</div>
+</div>

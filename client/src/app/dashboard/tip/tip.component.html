@@ -1,0 +1,5 @@
+<div class="card white article">
+  <h1>{{tip.title}} <small>{{tip.date | date: yy-MM-dd}}</small></h1>
+  <img src="{{tip.featured_media}}" alt="">
+  <div [innerHTML]="tip.content"></div>
+</div>

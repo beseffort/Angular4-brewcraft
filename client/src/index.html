@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Brewcraft</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/animate.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/ripple.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/carousel/default_skin.css">
+  <link rel="stylesheet" type="text/css" href="assets/growl/jquery.growl.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery.hashtags.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/star-rating.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/transition.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/dropdown.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <script type="text/javascript" src="assets/jquery-3.2.1.min.js"></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js' type='text/javascript'></script>
+  <!-- <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script> -->
+  <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootbox.min.js"></script>
+  <script type="text/javascript" src="assets/ripple.min.js"></script>
+  <script type="text/javascript" src="assets/carousel/jquery.sky.carousel-1.0.2.min.js"></script>
+  <script type="text/javascript" src="assets/growl/jquery.growl.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.autosize.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.hashtags.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.mark.min.js"></script>
+  <script src="assets/js/star-rating.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="assets/js/transition.min.js"></script>
+  <script type="text/javascript" src="assets/js/dropdown.min.js"></script>
+  <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD759e-Z7liSYamprfMPQ5rZO_NY-RELjE&libraries=places"></script> -->
+  
+  <style type="text/css">
+    .loadingPage {
+      width: 100%;
+      height: 100%;
+      background-color: #099DED;
+    }
+
+    .loading {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -60px 0 0 -60px;
+      background-size: 100% 100%;
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+    }
+
+    .loading:after {
+      content: '';
+      background: trasparent;
+      width: 115%;
+      height: 115%;
+      position: absolute;
+      border-radius: 100%;
+      top: -7%;
+      left: -7%;
+      opacity: 0.7;
+      box-shadow: rgba(255, 255, 255, 0.6) -4px -5px 3px -3px;
+      animation: rotate 2s infinite linear;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotateZ(0deg);
+      }
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <app-root>
+    <div class="loadingPage">
+      <div class="loading"></div>
+    </div>
+  </app-root>
+</body>
+<div class="ajax_loading"></div>
+</html>
+<script>
+$(document).ready(function() {
+  $('textarea').autosize();
+  $("textarea").hashtags();
+  
+  // // show hashtag highlight 
+  // $(".aa").markRegExp(/([@]|[#])([a-z])\w+/gmi, {
+  // 	"element": "a",
+  //   "className": "highlight",
+  // 	"each": function(element){
+  //   	$(element).attr("href", "javascript:;");
+  //   }
+  // });
+
+});
+</script>

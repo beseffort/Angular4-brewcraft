@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <flash-messages></flash-messages>
+  <div class="box row" style="top: 200px;">
+    <div class="box-image">
+      <img src="/assets/img/Avatar/Avatar_Level_5.png" alt="">
+    </div>
+    <div class="form">
+      <div class="title">
+        <span>Become a <b>Craftsman!</b></span>
+        <hr>
+      </div>
+      <form class="form-horizontal" action="" method="post">
+        <fieldset>
+          <div style="margin-top: 15px; margin-bottom: 20px;">
+            Dont have an account? <a href="/signup" class="orange">Sign up!</a>
+          </div>
+          <div [ngClass]="{'input-group': true, 'has-error1': !onEmail}">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+            <input type="text" class="form-control" id="inputEmail" placeholder="your@example.com" [(ngModel)]="user.email" name="username">
+            <a href="/forgot-password" class="orange pull-right" style="
+              margin-top: -34px;
+              position: relative;
+              z-index: 99;
+              margin-right: 15px;
+              font-size: 16px;
+            ">Forgot?</a>
+          </div>
+          <div *ngIf="!onEmail" class="animated fadeIn"><label class="error">Please enter a valid email address.</label></div>
+          <div [ngClass]="{'input-group': true, 'has-error1': !onPassword}">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key"></i></span>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" [(ngModel)]="user.password" name="password"
+              #password="ngModel">
+          </div>
+          <div *ngIf="!onPassword" class="animated fadeIn"><label class="error">Please enter your password.</label></div>
+          <div class="input-group row">
+            <div class="col-lg-12 text-center" style="margin-bottom: 15px;">
+              <a class="btn btn-orange big" (click)="login()" style="width: 100%">Sign in</a>
+            </div>
+
+            <div class="col-xs-12" style="margin-bottom: 15px; line-height: 13px;">
+              or Sign In...
+            </div>
+            <div class="col-xs-6" style="padding-right: 6px;">
+              <a href="javascript:void(0)" (click)="loginWithFacebook()">
+                <img src="/assets/img/withfacebook.jpg" alt="">
+              </a>
+            </div>
+            <div class="col-xs-6" style="padding-left: 6px;">
+              <a href="javascript:void(0)" (click)="loginWithGoogle()">
+                <img src="/assets/img/withgoogle.jpg" alt="">
+              </a>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

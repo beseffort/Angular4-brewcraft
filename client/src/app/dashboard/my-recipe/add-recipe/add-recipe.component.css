@@ -1,0 +1,130 @@
+input[type="checkbox"]:after, .checkbox input[type="checkbox"]:after, .checkbox-inline input[type="checkbox"]:after{
+    border: 2px solid #ffc107 !important;
+}
+input[type="checkbox"]:checked:after, .checkbox input[type="checkbox"]:checked:after, .checkbox-inline input[type="checkbox"]:checked:after {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+.btn-orange{
+    font-size: larger;
+    padding: 10px 30px;
+    /*bottom:-120px;*/
+}
+
+.addrecipe-header-div{
+    float: left;
+}
+.addrecipe-header-div span{
+    font-size: medium;
+}
+.addrecipe-header-img{
+    margin-left: 30px;
+    height: 100px;
+    margin-top: 15px;
+}
+.sliderImageDiv img{
+    height: 200px;
+    margin-left: -15px;
+}
+
+.checkboxdivblock{
+    margin-left:20px;
+}
+.checkboxdivblock>div{
+    margin-top: 5px;
+}
+.mrgtop10{
+   margin-top: 10px;
+}
+.mrgtop20{
+    margin-top: 20px;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+@media only screen and (max-width:1024px) {
+    .checkboxdivblock{
+        margin-left:0px !important;
+    }
+    .btn-orange{
+        bottom:0px !important;
+    }
+    textarea{
+        width: 100%;
+    }
+}
+/* Add recipe carousel */
+#quote-carousel 
+{
+  padding: 0;
+}
+/* Control buttons  */
+#quote-carousel .carousel-control
+{
+  background: none;
+  color: #222;
+  font-size: 2.3em;
+  text-shadow: none;
+  margin-top: 30px;
+}
+/* Previous button  */
+#quote-carousel .carousel-control.left 
+{
+  left: 0;
+  bottom: -12px;
+  margin-top: 0;
+  top: auto;
+  width: auto;
+}
+#quote-carousel .carousel-control i.fa.fa-chevron-left, #quote-carousel .carousel-control i.fa.fa-chevron-right {
+    color: #FFC107;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+/* Next button  */
+#quote-carousel .carousel-control.right 
+{
+    right: 0 !important;
+      bottom: -12px;
+      margin-top: 0;
+      top: auto;
+      width: auto;
+}
+.sliderImageDiv ol.carousel-indicators {
+    display: none;
+}
+.sliderImageDiv .carousel-inner p {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0 0;
+    margin-bottom: 0;
+}
+.default.text{
+  font-size: 15px !important;
+}
+.menu .item{
+  font-size: 18px !important;
+}
+button.addStepBtn {
+  z-index: 0 !important;
+}
+img.ref_img {
+  position: absolute;
+  z-index: 999;
+  right: -30%;
+}
+img.remove-btn {
+  width: 3%;
+  position: absolute;
+  top: 35px;
+}
+span.tip-mark {
+  position: absolute;
+  right: 2%;
+  top: 25px;
+}

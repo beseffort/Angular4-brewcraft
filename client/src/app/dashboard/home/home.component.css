@@ -1,0 +1,149 @@
+.tab-content {
+    padding: 25px;
+    padding-bottom: 30px;
+}
+
+.nav.nav-tabs {
+    background: #ffc107;
+    color: white;
+}
+
+.nav-tabs>li>a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-tabs>li>a:hover,
+.nav-tabs>li>a:focus:hover {
+    box-shadow: none;
+    color: white;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus {
+    background: white;
+    box-shadow: none;
+    color: #ffc107;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 0 !important;
+}
+
+.nav-tabs>li {
+    border-right: solid 1px white;
+}
+
+.left {
+    padding-left: 15px;
+    padding-right: 20px;
+    width: 135px;
+    float: left;
+}
+
+.left img {
+    width: 100px;
+    margin-top: 10px;
+    /*display: block;*/
+}
+
+.left iframe {
+    width: 100px;
+    margin-top: 10px;
+    border: none;
+    /*display: block;*/
+}
+
+.right {
+    width: calc(100% - 150px);
+    float: left;
+}
+
+.post-content {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    height: 120px;
+}
+
+/*.nav-tabs>li>a, .nav-tabs>li>a:focus {*/
+    /*padding: 10px 25px;*/
+/*}*/
+
+.blog-widget {
+    padding: 25px;
+}
+
+.media.post .footer {
+    margin-top: 5px;
+}
+
+.media.post {
+    margin-bottom: 20px;
+}
+
+hr {
+    margin: 0 -25px;
+}
+
+.none{
+    width: 100px;
+    height: 80px;
+    background: #ff5722;
+    text-align: center;
+    padding: 1px;
+    line-height: initial;
+    font-size: 56px;
+    color: white;
+}
+
+iframe {
+    border: none;
+}
+
+.browse-recipe-img{
+    width: auto !important;
+    height: 100px !important;
+}
+
+
+textarea{
+    width: 100%;
+}
+input[type="checkbox"]:after, .checkbox input[type="checkbox"]:after, .checkbox-inline input[type="checkbox"]:after{
+    border: 2px solid #ffc107 !important;
+}
+input[type="checkbox"]:checked:after, .checkbox input[type="checkbox"]:checked:after, .checkbox-inline input[type="checkbox"]:checked:after {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+.addrecipe-header-div{
+    float: left;
+}
+.addrecipe-header-div span{
+    font-size: medium;
+}
+.sliderImageDiv img{
+    height: 200px;
+    margin-left: -15px;
+}
+.mrgtop10{
+    margin-top: 10px;
+}
+.mrgtop20{
+    margin-top: 20px;
+}
+.btn-orange{
+    font-size: larger;
+}
+.btn-Add-recipe{
+    padding: 10px 30px;
+    bottom:-120px;
+}
+.nav>li{
+    width: 33.3% !important;
+    padding:0px !important;
+}
+
+.nav>li a{
+    text-align: center;
+}

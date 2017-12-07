@@ -1,0 +1,32 @@
+<div class="search-bar">
+  <div class="container">
+    <div class="row">
+      <div class="title col-md-4">
+        <span>BROWSE RECIPES</span>
+      </div>
+
+      <div class="col-md-4">
+        <img src="/assets/img/brewday/step1.png" class="img-responsive center-img">
+        <form style="max-width:800px;">
+          <ng-select class="search" name="beer-style" [(ngModel)]="style" [options]="stylesOptions" [multiple]="false" placeholder="Search Beer Type"
+            [allowClear]="true" (selected)="onStyleSelected($event)" (deselected)="onStyleClear($event)">
+          </ng-select>
+        </form>
+      </div>
+
+      <div class="col-md-4">
+        <img src="/assets/img/recipe/recipe-girl.png" class="img-responsive right-img">
+      </div>
+    </div>
+    <div class="clearfix"></div><br/>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      
+      <button class="btn btn-orange big recipe_btn" style="z-index:0" (click)="AddNewRecipe()" *ngIf="add">ADD RECIPE</button>
+      <button class="btn btn-orange big recipe_btn" style="z-index:0" (click)="RemoveRecipe()" *ngIf="!add">CLOSE RECIPE</button>
+    </div>
+  </div>
+</div>

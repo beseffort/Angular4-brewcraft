@@ -1,0 +1,9 @@
+.widget {
+    height: 43px;
+    background: #ffc107;
+    color: white;
+    font-size: 18px;
+    padding: 5px 14px;
+    padding-top: 6px;
+    cursor: pointer;
+}

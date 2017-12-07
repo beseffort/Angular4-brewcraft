@@ -1,0 +1,56 @@
+<div class="brew-timer">
+  <div class="container">
+    <div class="beer-girl">
+      <img src="/assets/img/brewday/beer_girl.png" alt="">
+    </div>
+    <div class="steps">
+      <h1 *ngIf="!brew" class="counter">00:00:00</h1>
+      <span *ngIf="brew">
+        <h1 *ngIf="!brewService.isCompleted()" class="counter">{{brew?formatTimer(brew.total_time_counter): '00:00:00'}}</h1>
+        <h1 *ngIf="brewService.isCompleted()" class="counter">Completed</h1>
+      </span>
+      <div class="control-group">
+        <button class="btn btn-light-red" (click)="restartBrew()" [disabled]="!brew">
+          <img src="/assets/img/brewday/restart.png" alt="" /> Restart
+        </button>
+        <button class="btn btn-light-red" (click)="startBrew()" [disabled]="!brew || completed || started">
+          <img src="/assets/img/brewday/start.png" alt="" style="padding: 1px" /> Start
+        </button>
+        <button class="btn btn-light-red" (click)="pauseBrew()" [disabled]="!brew">
+          <img src="/assets/img/brewday/pause.png" alt="" style="padding: 2px"/> Pause
+        </button>
+      </div>
+
+      <h3 class="recipe_steps">Recipe Steps</h3>
+
+      <div class="step-list" *ngIf="brew" [ngStyle]="{'margin-top': (-(brew.step - 1) * 43) + 'px', 'transition': transition}">
+        <div class="step" *ngFor="let step of brew.recipe.steps; let i = index;" [ngStyle]="{'opacity': (brew.step - 1 >= i + 1) ? 0 : 1 }">
+          <div class="status-img">
+            <img class="pending" src="/assets/img/brewday/pending.png" *ngIf="(brew.step < i + 1) || ((brew.step == i + 1) && brew.status != 1 && brew.status != 3)">
+            <img class="waiting" src="/assets/img/brewday/waiting.gif" *ngIf="(brew.step == i + 1) && (brew.status == 1)">
+            <img class="paused" src="/assets/img/brewday/paused.png" *ngIf="(brew.step == i + 1) && (brew.status == 3)">
+            <img class="completed" src="/assets/img/brewday/completed.png" *ngIf="(brew.step > i + 1)">
+          </div>
+          <span [ngClass]="{'pending': (brew.step < i + 1) || (brew.step == i + 1 && brew.status != 1)}">
+            {{i + 1}}. Step - {{step.name}} - {{step.step_time}}
+          </span>
+        </div>
+        <div class="step" *ngFor="let step of brew.recipe.steps; let i = index;" [ngStyle]="{'opacity': (brew.step - 1 >= i + 1) ? 1 : 0 }">
+          <div class="status-img">
+            <img class="completed" src="/assets/img/brewday/completed.png">
+          </div>
+          <span>
+            {{i + 1}}. Step - {{step.name}} - {{step.step_time}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="hop-img-left hidden-sm hidden-xs">
+      <img src="/assets/img/home/hop_left.png" alt="">
+    </div>
+    <div class="hop-img-right hidden-sm hidden-xs">
+      <img src="/assets/img/home/hop_right.png" alt="">
+    </div>
+  </div>
+</div>

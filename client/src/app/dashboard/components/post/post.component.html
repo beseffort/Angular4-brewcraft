@@ -1,0 +1,38 @@
+<div class="context">
+  <div *ngIf="posts.length > 0">
+    <div class="media post" *ngFor="let post of posts">
+        <div class="media-left">
+            <a>
+                <img class="media-object" [src]="post.profileUrl" onError="this.onerror=null;this.src='/assets/gravatar/default.jpg';"
+                />
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">{{post.writerName}} <small>&bull; {{getTimeDiff(post.date)}}</small></h4>
+            <div class="marginT25min">
+              
+              <span class="desc line-breaker" data-name="post" HashTagLink>
+                {{post.content.length < 100? post.content: post.content.substr(0, 100) + '...'}}
+              </span> 
+            </div>
+            <div class="footer">
+              <span>
+                <img src="assets/img/unlike.png" class="cursor" alt="" (click)="likeMsg(post.key)" *ngIf="!post.isLike" />
+                <img src="assets/img/like.png" class="cursor" alt="" (click)="UnlikeMsg(post.key)" *ngIf="post.isLike" />
+                {{ (this.post.likedUsers != undefined)?this.post.likedUsers.length:0 }}
+              </span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isPost">
+      <hr>
+      <button class="btn btn-orange big pull-right" style="margin-left: 5px;"  (click)="loadMorepost()" >Load more</button>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="row" *ngIf="posts.length == 0">
+    <div class="col-md-12 fs16 text-center bold" >
+      No post found.
+    </div>
+  </div>
+</div>

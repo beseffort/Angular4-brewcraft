@@ -1,0 +1,58 @@
+
+<section class="step">
+  <div class="red-bar">
+  </div>
+  <div class="container" style="margin-top: -60px;">
+    <div class="row">
+      <div class="step1 col-md-4">
+        <div class="step-title">
+          <span>Step <span class="big">1.</span></span>
+          <img class="image1" src="/assets/img/brewday/step1.png" alt="">
+        </div>
+        <div class="step-content">
+          <div class="step-desc">// Select Beer Type</div>
+          <form style="max-width:800px; margin-top: 15px">
+            <ng-select name="beer-style" [(ngModel)]="style" [options]="stylesOptions" [multiple]="false" placeholder="Select one"  [allowClear]="false"
+              (selected)="onStyleSelected($event)">
+            </ng-select>
+
+            <div style="margin:10px 0 20px 0;color:#666;font-size:11pt;font-style:italic;">
+              Selected option id: {{style}}
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-3 text-center next-step" style="padding: 0">
+        <div class="linking-bar"></div>
+        <button class="btn btn-orange big" (click)="enableNextStep()">Next Step</button>
+        <div [ngClass]="{'linking-bar': true, 'right': true, 'disabled': !isNextStep}" class="linking-bar right disabled"></div>
+      </div>
+      <div class="step1 col-md-4">
+        <div class="step-title">
+          <span>Step <span class="big">2.</span></span>
+          <img class="image2" src="/assets/img/brewday/step2.png" alt="">
+        </div>
+        <div class="step-content">
+          <div class="step-desc">// Select available beer</div>
+          <form style="max-width:800px; margin-top: 15px">
+            <ng-select [options]="availableRecipesOptions" name="recipe" [(ngModel)]="recipe" [multiple]="false" placeholder="Select one"  [allowClear]="false"
+              [disabled]="!isNextStep" (selected)="onRecipeSelected($event)" #recipeSelect
+              >
+            </ng-select>
+
+            <div style="margin:10px 0 20px 0;color:#666;font-size:11pt;font-style:italic;">
+              Selected option id: 
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row paragraph">
+      <div class="col-md-11 content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Tempor incididunt
+        ut labore et dolore magna aliqua.Tempor incididunt ut labore et dolore magna aliqua.Tempor incididunt ut labore et
+        dolore magna aliqua.Tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+    </div>
+  </div>
+</section>

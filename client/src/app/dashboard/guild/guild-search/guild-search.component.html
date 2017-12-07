@@ -1,0 +1,38 @@
+<div class="white guild_wrapper">
+    <div class="guild_title_div">
+        <span class="guild_name fs23">BROWSE GUILDS</span>
+    </div>
+    <div class="row">
+      <div class="col-md-12 marginT10">
+        <div class="col-md-6">
+          <input type="text" class="form-control" #searchGuild>
+        </div>
+        <div class="col-md-2 no_padding">
+          <button class="btn btn-orange big" (click)="searchGuilds(searchGuild.value)">Search</button>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-orange big" (click)="addNewGuild()">ADD NEW GUILD</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <div class="row modifi-row">
+              <div *ngFor="let guild of guilds;let i = index;">
+                  <div class="col-md-3 member-block-div text-center" *ngIf="i < recipeLimit" (click)="guildDetails(guild.id)">
+                    <div><img [src]="guild.logo" width="100%"></div>
+                    <div>{{ guild.name }}</div>
+                  </div> 
+              </div>  
+          </div>
+          <div class="pull-right" style="margin: 10px">
+            <button class="btn btn-light-red big" style="margin-right: 10px;" (click)="loadMoreRecipe()" [hidden]="guilds.length <= recipeLimit">Load more</button>
+          </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="notFound">
+      <div class="col-md-12 bold text-center fs16 marginT10">
+        No Guild found
+      </div>
+    </div>
+</div>

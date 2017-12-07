@@ -1,0 +1,144 @@
+.header {
+    height: 220px;
+    background: rgba(0, 0, 0, 0) url(/assets/img/brewday/header_back.jpg) repeat scroll 65% center / cover;
+}
+
+.header img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    padding: 30px 20px;
+}
+
+.header-img {
+    height: inherit;
+    background: rgba(0, 0, 0, 0) url(/assets/img/home/header_back.jpg) repeat scroll 65% center / cover;
+    padding-top: 152px;
+    padding-bottom: 40px;
+}
+
+.padding-top {
+    padding-top: 60px;
+}
+
+.triangle-right {
+    position: absolute;
+    margin-top: -60px;
+    margin-left: -12px;
+}
+
+.triangle-left {
+    position: absolute;
+    margin-top: -60px;
+    margin-left: 12px;
+}
+
+.red-background {
+    min-height: 400px;
+    background: rgba(0, 0, 0, 0) url(/assets/img/home/red_back.jpg) repeat scroll 60% center / cover;
+}
+
+.step-title {
+    font-size: 30px;
+    color: white;
+    line-height: 50px;
+}
+
+.step-title .big {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.step-title .image1 {
+    position: absolute;
+    max-width: 300px;
+    margin-left: 50px;
+    margin-top: -75px;
+}
+
+.step-title .image2 {
+    position: absolute;
+    max-width: calc(100% - 108px);
+    margin-left: 50px;
+    margin-top: -110px;
+}
+
+.step {
+    background: white;
+}
+
+.step-desc {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.step-content {
+    margin-top: 19px;
+}
+
+pre {
+    background-color: #f5f5f5;
+    border: 1px solid #9e9e9e;
+    padding: 8px;
+    height: 100px;
+    overflow-y: scroll;
+}
+
+@media screen and (max-width: 1199px) {
+    .red-background {
+        min-height: 360px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .red-background {
+        min-height: 325px;
+    }
+    .title {
+        font-size: 34px;
+    }
+    .candle-right {
+        margin-top: 5px;
+    }
+    .candle-right img {
+        width: 160px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .padding-top:nth-child(2) {
+        padding-top: 30px;
+    }
+    .candle-right {
+        margin-top: 18px;
+    }
+    .candle-right img {
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .red-background {
+        min-height: 300px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .red-background {
+        min-height: 325px;
+    }
+}
+
+@media screen and (max-width: 407px) {
+    .red-background {
+        min-height: 345px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .red-background {
+        min-height: 365px;
+    }
+}
